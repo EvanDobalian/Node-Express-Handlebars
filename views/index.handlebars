@@ -1,0 +1,52 @@
+<h1>Eat-Da-Burger</h1>
+<br>
+<div class='row'>
+    <div class='col-3'></div>
+    <div class='col-3 burger-list'>
+        <h2>Burgers Available</h2>
+        <ul class='list-group'>
+            {{#each burgers}}
+            {{#unless devoured}}
+            <li>
+                {{burger_name}}
+                <button value="{{id}}" class='devour-btn btn btn-danger btn-xs'>Devour</button>
+            </li>
+            <br>
+            {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+    <div class='col-3 burger-list'>
+        <h2>Burgers Devoured</h2>
+        <ul class='list-group'>
+            {{#each burgers}}
+            {{#if devoured}}
+            <li>
+            {{burger_name}}
+            </li>
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+    <div class='col-3'></div>
+</div>
+
+<div class='row'>
+    <div class='col-4'></div>
+    <div class='col-4'>
+        <h2>Add Burger</h2>
+    </div>
+    <div class='col-4'></div>
+</div>
+
+<div class='row'>
+    <div class='col-4'></div>
+    <div class='col-4'>
+        <form class='burger-form'>
+            <label for="burger" class='burger-label'>Enter new Burger</label>
+            <br>
+            <input id='burger' class='burger-input' type='text' name='burger'>
+            <button id='burger-btn' class='burger-input' type='submit' class='btn btn-success'>Add</button>
+        </form>
+    </div>
+</div>
